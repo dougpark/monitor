@@ -54,4 +54,4 @@ This project was supported by a local AI model. The initial drafts of the docume
 
 ## License
 
-[MIT License](https://choosealicense.com/) 
+[MIT License](https://opensource.org/licenses/MIT)
