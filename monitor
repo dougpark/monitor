@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# Copy to $HOME/bin/monitor
+
+# Monitor Nvidia GPU statistics and format the output
+
+clear
+
+# ANSI color codes
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+MAGENTA='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m' # No Color
+
+# Hide cursor
+echo -ne "\033[?25l"
+
+# Trap the SIGINT signal (Ctrl+C) and restore the cursor
+trap "echo -ne '\033[?25h'; exit" SIGINT
+
+# Infinite loop to continuously monitor
+while true; do
+  
+# Get terminal dimensions
+    rows=$(tput lines)
+    cols=$(tput cols)
+  
+# Move cursor to top-left corner
+    tput cup 0 0
+  
+# Nvidia GPU monitoring
+    echo -e "${YELLOW}----- Nvidia Monitoring -----${NC}"
+    nvidia-smi  \
+--query-gpu=fan.speed,temperature.gpu,power.draw,memory.used,utilization.gpu \
+--format=csv,noheader \
+    | awk -F',' '{print "Nvidia - Fan: " $1 ", Temp: " $2 ", Power: " $3 ", MemUsed: " $4 ", GPU%: " $5}'
+    echo ""
+  
+#Ollama process monitoring
+    echo -e "${BLUE}----- Ollama Monitoring -----${NC}"
+    docker exec -it ollama ollama ps
+    echo ""
+  
+# System Information (Memory and Load Average)
+    echo -e "${GREEN}----- System Info -----${NC}"
+    free -h | awk 'NR==2{print "Memory Usage: " $3 " / " $2}'
+    uptime | awk -F'load average:' '{print "Load Average:" $2}'
+  
+    echo ""
+    echo "Press [CTRL+C] to stop.."
+
+# Sleep for a second before refreshing
+    sleep 1
+done
