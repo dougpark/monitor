@@ -4,6 +4,8 @@
 
 This script provides a real-time monitoring solution for systems running local Ollama models with an Nvidia GPU. It combines insights from Nvidia GPU utilization, Ollama model performance, and overall system information, allowing you to ensure optimal resource allocation and prevent GPU memory overflow.  This is particularly helpful for keeping track of resource usage during model inference and identifying potential bottlenecks.
 
+![Screenshot of the script running in the terminal](images/monitor_output.png)
+
 ## Prerequisites
 
 Before running this script, you'll need to ensure the following are installed and configured on your system:
