@@ -48,6 +48,10 @@ The script incorporates monitoring routines for:
 *   **Error Handling:** Improve error handling and provide more informative error messages.
 *   **Python Integration:** Migrate to Python for cleaner logic.
 
+## Behind the Scenes
+
+This project was supported by a local AI model. The initial drafts of the documentation and some code structure were "vibe coded" with the help of Gemma 3, running locally. It's amazing what a bit of AI assistance can do!  Learn more about Gemma 3 [here](https://ai.google.dev/gemma) or explore the technical details [in the documentation](https://github.com/google-deepmind/gemma).
+
 ## License
 
 [MIT License](https://choosealicense.com/) 
