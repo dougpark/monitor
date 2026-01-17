@@ -1,6 +1,12 @@
 #!/bin/bash
 
-# Copy to $HOME/bin/monitor
+# Doug Park
+# January 17, 2026
+# Vibe coded with Gemma 3 12b on local AI Station
+
+# For production use, make this script executable:
+# chmod +x monitor  
+# cp monitor $HOME/bin/monitor
 
 # Monitor Nvidia GPU statistics and format the output
 

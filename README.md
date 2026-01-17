@@ -48,4 +48,4 @@ The script incorporates monitoring routines for:
 
 ## License
 
-[MIT License](https://choosealicense.com/) (This section is important for clarifying how others can use and distribute your script.)
+[MIT License](https://choosealicense.com/) 
