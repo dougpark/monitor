@@ -42,7 +42,7 @@ while true; do
     nvidia-smi  \
 --query-gpu=fan.speed,temperature.gpu,power.draw,memory.used,utilization.gpu \
 --format=csv,noheader \
-    | awk -F',' '{print "Nvidia - Fan: " $1 ", Temp: " $2 ", Power: " $3 ", MemUsed: " $4 ", GPU%: " $5}'
+    | awk -F',' '{print "Fan: " $1 ", Temp: " $2 ", Power: " $3 ", MemUsed: " $4 ", GPU%: " $5}'
     echo ""
   
 #Ollama process monitoring
