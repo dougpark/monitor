@@ -54,8 +54,13 @@ while true; do
     echo -e "${GREEN}----- System Info -----${NC}"
     free -h | awk 'NR==2{print "Memory Usage: " $3 " / " $2}'
     uptime | awk -F'load average:' '{print "Load Average:" $2}'
-  
     echo ""
+  
+# Disk Usage
+    echo -e "${MAGENTA}----- Disk Usage -----${NC}"
+    df -H | grep -E '^Filesystem|/dev/nvme0n1p2'
+    echo ""
+    
     echo "Press [CTRL+C] to stop.."
 
 # Sleep for a second before refreshing
